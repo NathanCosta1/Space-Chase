@@ -1,6 +1,6 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.122.0/build/three.module.js";
 import { scene, loadModels } from './scene.js';
-import loadAsteroid1 from '../models/Asteroid1/index.js';
+import loadAsteroid from '../models/Asteroid/index.js';
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.122.0/examples/jsm/controls/OrbitControls.js";
 import { FirstPersonControls } from "https://cdn.jsdelivr.net/npm/three@0.122/examples/jsm/controls/FirstPersonControls.js";
 
@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', () => {
     resetSpeedButton.style.display = 'block';
 
     // Load models and initialize the scene
-    Promise.all([loadModels(), loadAsteroid1()]).then(([_, loadedAsteroidModel]) => {
+    Promise.all([loadModels(), loadAsteroid()]).then(([_, loadedAsteroidModel]) => {
       asteroidModel = loadedAsteroidModel;
       initScene();
     }).catch((error) => {
